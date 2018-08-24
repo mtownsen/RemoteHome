@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RemoteHome</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render(:partial => "layouts/navbar") %>
+    <div class="container">
+      <% if notice != nil %>
+        <div class="alert alert-info" role="alert"><%= notice %></div>
+      <% end %>
+      <% if alert != nil %>
+        <div class="alert alert-danger" role="alert"><%= alert %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
