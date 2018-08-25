@@ -12,7 +12,24 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery3
+
+// vendor components
+//= require popper.js/dist/umd/popper
+//= require jquery.scrollbar/jquery.scrollbar
+//= require jquery-scrollLock/jquery-scrollLock
+//= require flot/jquery.flot
+//= require flot/jquery.flot.resize
+//= require flot.curvedlines/curvedLines
+//= require jqvmap/dist/jquery.vmap
+//= require jqvmap/dist/maps/jquery.vmap.world
+//= require jquery.easy-pie-chart/dist/jquery.easypiechart
+//= require salvattore/dist/salvattore
+//= require moment/min/moment.min.js
+//= require fullcalendar/dist/fullcalendar
+// end vendor components
+
+//= require_tree .
 //= require popper
 //= require bootstrap-sprockets
+
