@@ -9,14 +9,9 @@
   </head>
 
   <body data-ma-theme="green">
-    <main class="main">
-      <%= render(:partial => "layouts/navbar") %>
-      <%= render(:partial => "layouts/aside") %>
-      <section class="content">
-        <%= render(:partial => "layouts/alerts") %>
-        <%= yield %>
-      </section>
-    </main>
+<!--     <%= render(:partial => "layouts/page_loader") %> -->
+    <%= render(:partial => "layouts/alerts") %>
+    <%= yield %>
     <%= render(:partial => "layouts/browser_warnings") %>
-  </body>
+    </body>
 </html>
