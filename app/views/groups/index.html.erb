@@ -1,18 +1,16 @@
 <div class="content__inner">
   <div class="toolbar">
-      <div class="toolbar__label">
-          <%= @groups.count %> Groups
-      </div>
-
+      <nav class="toolbar__nav">
+        <%= link_to 'Users', users_path %>
+        <%= link_to 'Groups', groups_path, class: 'active' %>
+      </nav>
       <div class="actions">
           <i class="actions__item zmdi zmdi-search" data-ma-action="toolbar-search-open"></i>
-          <%= link_to '', new_group_path, class: 'actions__item zmdi zmdi-plus hidden-xs-down' %>
+          <%= link_to '', new_user_path, class: 'actions__item zmdi zmdi-plus hidden-xs-down' %>
       </div>
-
       <div class="toolbar__search">
-          <input type="text" placeholder="Search...">
-
-          <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
+        <input type="text" placeholder="Search...">
+        <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
       </div>
   </div>
 
