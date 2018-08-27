@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   belongs_to :company
   accepts_nested_attributes_for :company
+  has_and_belongs_to_many :groups
 end

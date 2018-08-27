@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<div class="content__inner">
+  <div class="toolbar">
+      <div class="toolbar__label">
+          <%= @groups.count %> Groups
+      </div>
+
+      <div class="actions">
+          <i class="actions__item zmdi zmdi-search" data-ma-action="toolbar-search-open"></i>
+          <%= link_to '', new_group_path, class: 'actions__item zmdi zmdi-plus hidden-xs-down' %>
+      </div>
+
+      <div class="toolbar__search">
+          <input type="text" placeholder="Search...">
+
+          <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
+      </div>
+  </div>
+
+  <div class="row groups">
+    <% @groups.each do |group| %>
+      <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+          <div class="groups__item">
+              <%= link_to(group) do %>
+                <div class="groups__img">
+                    <img class="avatar-img" src="demo/img/contacts/1.jpg" alt="">
+                    <img class="avatar-img" src="demo/img/contacts/2.jpg" alt="">
+                    <img class="avatar-img" src="demo/img/contacts/3.jpg" alt="">
+                    <img class="avatar-img" src="demo/img/contacts/4.jpg" alt="">
+                </div>
+
+                <div class="groups__info">
+                    <strong><%= group.name %></strong>
+                    <small><%= group.users.count %></small>
+                </div>
+              <% end %>
+
+              <div class="actions">
+                  <div class="dropdown actions__item">
+                      <i class="zmdi zmdi-more-vert" data-toggle="dropdown"></i>
+
+                      <div class="dropdown-menu dropdown-menu-right">
+                          <%= link_to 'Edit', edit_group_path(group), class: 'dropdown-item' %>
+                          <%= link_to 'Delete', 
+                                      group, 
+                                      method: :delete, data: { confirm: 'Are you sure?' },
+                                      class: 'dropdown-item' %>
+                          <a class="dropdown-item" href="" data-demo-action="delete-listing">Delete</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
