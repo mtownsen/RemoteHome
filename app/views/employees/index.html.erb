@@ -1,12 +1,12 @@
 <div class="content__inner">
     <div class="toolbar">
       <nav class="toolbar__nav">
-        <%= link_to 'Users', users_path, class: 'active' %>
+        <%= link_to 'Users', employees_path, class: 'active' %>
         <%= link_to 'Groups', groups_path %>
       </nav>
       <div class="actions">
           <i class="actions__item zmdi zmdi-search" data-ma-action="toolbar-search-open"></i>
-          <%= link_to '', new_user_path, class: 'actions__item zmdi zmdi-plus hidden-xs-down' %>
+          <%= link_to '', new_employee_path, class: 'actions__item zmdi zmdi-plus hidden-xs-down' %>
       </div>
       <div class="toolbar__search">
         <input type="text" placeholder="Search...">
