@@ -1,8 +1,11 @@
 class EmployeesController < ApplicationController
-  # before_action :set_user, only: [:show]
+  before_action :set_employee, only: [:show]
 
   def index
-    @users = current_user.company.users
+    @employees = current_user.company.users
+  end
+
+  def show 
   end
 
   def new
@@ -17,7 +20,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to employees_path, notice: 'User was successfully added.' }
+        format.html { redirect_to employees_path, notice: 'Employee was successfully added.' }
         format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new }
@@ -27,7 +30,10 @@ class EmployeesController < ApplicationController
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_employee
+      @employee = current_user.company.users.find(params[:id])
+    end
+
     def user_params
       params.require(:user).permit(:email).merge(password: Devise.friendly_token.first(8))
     end
