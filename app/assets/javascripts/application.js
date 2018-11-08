@@ -27,6 +27,7 @@
 //= require salvattore/dist/salvattore
 //= require moment/min/moment.min.js
 //= require fullcalendar/dist/fullcalendar
+//= require datatables.net/js/jquery.dataTables.min.js
 // end vendor components
 
 //= require_tree .
